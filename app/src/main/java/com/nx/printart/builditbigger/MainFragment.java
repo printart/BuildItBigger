@@ -14,6 +14,8 @@ public class MainFragment extends Fragment {
     //for api http://www.icndb.com/api/
     //rated PG??
     private static final String baseUrlDefault = "http://api.icndb.com/jokes/random";
+    public static String mJoke;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
