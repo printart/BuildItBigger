@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.nx.printart.androidlib.ShowDataActivity;
 
 
@@ -17,8 +19,16 @@ public class MainFragment extends Fragment {
     //for api http://www.icndb.com/api/
     //rated PG??
     private static final String baseUrlDefault = "http://api.icndb.com/jokes/random";
+
+    //to test return value is null
+    //private static final String baseUrlDefault = "http://api.icndb.com/j/random";
+
     public static String mJoke;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,7 +36,6 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         Button getJokeButton = (Button) view.findViewById(R.id.get_joke_button);
-
         //call android library to show a joke
         getJokeButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ShowDataActivity.class);
@@ -34,14 +43,14 @@ public class MainFragment extends Fragment {
             startActivity(intent);
         });
 
-        /*AdView mAdView = (AdView) view.findViewById(R.id.adView);
+        AdView mAdView = (AdView) view.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
         // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
-        mAdView.loadAd(adRequest);*/
+        mAdView.loadAd(adRequest);
 
         return view;
     }

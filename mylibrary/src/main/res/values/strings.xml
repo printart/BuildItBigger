@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Library</string>
+    <string name="error_message">Server is out of jokes try again</string>
+</resources>

@@ -1,7 +1,6 @@
 package com.nx.printart.builditbigger;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -14,7 +13,6 @@ import java.io.IOException;
 
 public class FetchJokeAsync extends AsyncTask<String, Void, String> {
 
-    private static final String TAG = "FetchJokeAsync";
     private String mJoke;
     private MyApi mMyApiService;
 
@@ -37,7 +35,6 @@ public class FetchJokeAsync extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String data) {
-        Log.i(TAG, "onPostExecute: res:" + data);
         mJoke = data;
         MainFragment.mJoke = data;
     }
