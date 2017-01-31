@@ -1,4 +1,4 @@
-package com.nx.printart.builditbigger;
+package com.nx.printart.javalib;
 
 import java.io.BufferedReader;
 import java.io.IOException;

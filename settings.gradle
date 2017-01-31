@@ -1,1 +1,1 @@
-include ':app', ':javalib', ':gce_backend'
+include ':app', ':javalib', ':gce_backend', ':androidlib'

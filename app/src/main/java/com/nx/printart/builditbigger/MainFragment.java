@@ -1,11 +1,14 @@
 package com.nx.printart.builditbigger;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.nx.printart.androidlib.ShowDataActivity;
 
 
 public class MainFragment extends Fragment {
@@ -24,6 +27,12 @@ public class MainFragment extends Fragment {
 
         Button getJokeButton = (Button) view.findViewById(R.id.get_joke_button);
 
+        //call android library to show a joke
+        getJokeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ShowDataActivity.class);
+            intent.putExtra("joke_data", mJoke);
+            startActivity(intent);
+        });
 
         /*AdView mAdView = (AdView) view.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to

@@ -1,4 +1,4 @@
-package com.nx.printart.builditbigger;
+package com.nx.printart.backend;
 
 /**
  * The object model for the data we are sending through endpoints
